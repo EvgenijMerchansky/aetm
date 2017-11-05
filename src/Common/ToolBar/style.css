@@ -1,0 +1,38 @@
+.toolbar {
+    display: flex;
+    margin-bottom: -1px;
+    flex-wrap: wrap;
+}
+
+.toolbar:last-child {
+    width: 90px;
+}
+
+button {
+    background-color: #347447;
+    display: block;
+    width: 87px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.interface-btn:focus {
+    background-color: #2a613a;
+    color: white;
+}
+
+.custom {
+    width: 91px!important;
+}
+
+button:hover {
+    background-color: #2a613a;
+    color: #fff;
+}
+
+button:focus {
+    outline: none;
+}

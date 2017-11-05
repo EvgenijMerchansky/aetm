@@ -1,0 +1,34 @@
+.formating-modal {
+    position: absolute;
+    width: auto;
+    height: auto;
+    text-align: left;
+    padding: 10px;
+    left: 40%;
+    top: 11%;
+    background-color: white;
+    border: solid 1px #2a613a;
+}
+
+.numeric input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.numeric label {
+    margin-right: 20px;
+}
+
+.plain-text input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.date input {
+    width: auto;
+    margin-right: 5px;
+}
+
+.select-field:focus {
+    outline: none;
+}

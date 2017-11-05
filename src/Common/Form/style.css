@@ -1,0 +1,27 @@
+.container-align {
+    margin-top: 100px;
+}
+
+.form {
+    text-align: left;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.field {
+    float: right;
+}
+
+.next-button {
+    margin-top: 20px;
+    float: right;
+}
+
+input {
+    padding: 0 5px;
+}
+
+input:focus {
+    outline: none;
+    border: solid 1px #2a613a;
+}

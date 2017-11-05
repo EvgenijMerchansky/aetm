@@ -1,0 +1,14 @@
+.font-size-block {
+    position: absolute;
+    left: 53%;
+    top: 11%;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    border: solid 1px #2a613a;
+}
+
+select:focus {
+    outline: none;
+}
