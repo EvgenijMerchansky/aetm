@@ -3,17 +3,26 @@ import './style.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addUser } from '../../Actions';
+import Error from '../Error';
+import { ERROR_TEXT } from '../../constants';
 
 class Form extends Component {
     constructor() {
         super();
 
         this.state = {
-            name: false,
-            lname: false,
-            age: false,
+            error: false
         };
     }
+
+    disableError = () => {
+
+        setTimeout(() => {
+            this.setState({
+                error: false,
+            });
+        }, 1000);
+    };
 
     submitForm = (e) => {
         e.preventDefault();
@@ -29,25 +38,28 @@ class Form extends Component {
 
         if (newUser.name === '') {
             this.setState({
-                name: true,
+                error: true,
             });
 
+            this.disableError();
             return;
         }
 
         if (newUser.lname === '') {
             this.setState({
-                lname: true,
+                error: true,
             });
 
+            this.disableError();
             return;
         }
 
         if (newUser.age === '') {
             this.setState({
-                age: true,
+                error: true,
             });
 
+            this.disableError();
             return;
         }
 
@@ -58,6 +70,8 @@ class Form extends Component {
     };
 
     render = () => {
+        let { error } = this.state;
+
         return (
             <div className="container container-align">
                 <div className="col-md-12 title">
@@ -98,7 +112,9 @@ class Form extends Component {
                                 ref={'age'}
                                 id="age"
                             /><br/>
-
+                            {
+                                error && <Error errorText={ERROR_TEXT}/>
+                            }
                             <button
                                 type="submit"
                                 className="next-button"
