@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Form from './Form';
+import FormContainer from './FormContainer';
 import Table from './Table';
 import {
     BrowserRouter as Router,
@@ -13,7 +13,7 @@ class Common extends Component {
             <div>
                 <Router>
                     <div>
-                        <Route exact path="/" component={Form}/>
+                        <Route exact path="/" component={FormContainer}/>
                         <Route path="/table" component={Table}/>
                     </div>
                 </Router>

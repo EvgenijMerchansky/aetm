@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addUser } from '../../Actions';
 import Error from '../Error';
+import FormTitle from '../FormTitle';
 import { ERROR_TEXT } from '../../constants';
 
-class Form extends Component {
+class FormContainer extends Component {
     constructor() {
         super();
 
@@ -28,7 +29,7 @@ class Form extends Component {
         e.preventDefault();
         let {name, lname, age} = this.refs;
 
-        const newUser = {
+        const userModel = {
             name: name.value,
             lname: lname.value,
             age: age.value,
@@ -36,7 +37,7 @@ class Form extends Component {
             date: new Date(),
         };
 
-        if (newUser.name === '') {
+        if (userModel.name === '') {
             this.setState({
                 error: true,
             });
@@ -45,7 +46,7 @@ class Form extends Component {
             return;
         }
 
-        if (newUser.lname === '') {
+        if (userModel.lname === '') {
             this.setState({
                 error: true,
             });
@@ -54,7 +55,7 @@ class Form extends Component {
             return;
         }
 
-        if (newUser.age === '') {
+        if (userModel.age === '') {
             this.setState({
                 error: true,
             });
@@ -63,7 +64,7 @@ class Form extends Component {
             return;
         }
 
-        this.props.addUser(newUser);
+        this.props.addUser(userModel);
 
         this.props.history.push('/table');
 
@@ -74,9 +75,7 @@ class Form extends Component {
 
         return (
             <div className="container container-align">
-                <div className="col-md-12 title">
-                    <h3>User form(create new user)</h3>
-                </div>
+                <FormTitle />
                 <div className="row">
                     <div className="col-md-12">
                         <form
@@ -129,6 +128,7 @@ class Form extends Component {
     }
 }
 
+
 const mapStateToProps = (state) => {
     return {
         formState: state
@@ -142,4 +142,4 @@ const mapDispatchToProps = (dispatch) => {
     }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './style.css';
 import { connect } from 'react-redux';
 import ToolBar from '../ToolBar';
-import { Link } from 'react-router-dom'
+import TableInterface from '../TableInterface';
+import FormTitleEditor from '../FormTitleEditor';
 
 class Table extends Component {
     constructor() {
@@ -59,51 +60,11 @@ class Table extends Component {
 
         return (
             <div>
-                <p className="title-editor">
-                    <Link to="/" className="back-link">
-                        <i className="fa fa-arrow-circle-left arr-back-align"/>
-                        Back
-                    </Link>
-                    <i className={`fa fa-long-arrow-${sort ? 'up' : 'down'} arr-custom` }/>
-                    Editor
-                </p>
+                <FormTitleEditor sort={sort} />
                 <ToolBar/>
                 <table className="table">
                     <tbody>
-                    <tr className="interface-row">
-                        <td>
-                            <button
-                                className="sorting-name"
-                                onClick={() => {this.sortBy('name')}}
-                            >
-                                name
-                            </button>
-                        </td>
-                        <td>
-                            <button
-                                className="sorting-lname"
-                                onClick={() => {this.sortBy('lname')}}
-                            >
-                                Last name
-                            </button>
-                        </td>
-                        <td>
-                            <button
-                                className="sorting-age"
-                                onClick={() => {this.sortBy('age')}}
-                            >
-                                Age
-                            </button>
-                        </td>
-                        <td>
-                            <button
-                                className="sorting-date"
-                                onClick={() => {this.sortBy('age')}}
-                            >
-                                Date
-                            </button>
-                        </td>
-                    </tr>
+                    <TableInterface sortBy={this.sortBy} />
                     {
                         this.users.map(elem => {
                             return (
