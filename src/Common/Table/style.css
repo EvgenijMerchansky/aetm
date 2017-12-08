@@ -49,6 +49,7 @@
 
 .interface-row td{
     padding: 0;
+    border-top: 1px solid #347447;
 }
 
 .sorting-name {
