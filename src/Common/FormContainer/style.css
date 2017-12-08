@@ -25,3 +25,13 @@ input:focus {
     outline: none;
     border: solid 1px #2a613a;
 }
+
+@media screen and (max-width: 699px) and (min-width: 0px) {
+    .form {
+        width: auto;
+    }
+
+    .next-button {
+        width: 100%;
+    }
+}
