@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 import FormatingModal from '../FormattingModal';
 import FontSizeModal from '../FontSizeModal';
-import PrintModal from '../PrintModal';
+import PrintModal from '../PrintDocumentModal';
 import mock from './mock';
 
 class ToolBar extends Component {
@@ -32,7 +32,7 @@ class ToolBar extends Component {
     };
 
     render = () => {
-        const {formattingModal, fontSizeModal, printModal} = this.state;
+        const {formattingModal, fontSizeModal, printModal, currentModalName} = this.state;
 
         return (
             <div className="toolbar">
@@ -53,7 +53,7 @@ class ToolBar extends Component {
                             >
                                 <i
                                     className={`fa ${
-                                        this.state.currentModalName === elem.callIdentificator ?
+                                        currentModalName === elem.callIdentificator ?
                                         elem.helpClass : elem.buttonIco
                                     }`}
                                 />
