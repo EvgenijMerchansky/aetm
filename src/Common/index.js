@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FormContainer from './FormContainer';
 import Table from './Table';
 import {
@@ -6,20 +6,18 @@ import {
     Route,
 } from 'react-router-dom';
 
-class Common extends Component {
+const Common = () => {
 
-    render = () => {
-        return (
-            <div>
-                <Router>
-                    <div>
-                        <Route exact path="/" component={FormContainer}/>
-                        <Route path="/table" component={Table}/>
-                    </div>
-                </Router>
-            </div>
-        )
-    }
-}
+    return (
+        <div>
+            <Router>
+                <div>
+                    <Route exact path="/" component={FormContainer}/>
+                    <Route path="/table" component={Table}/>
+                </div>
+            </Router>
+        </div>
+    )
+};
 
 export default Common;
